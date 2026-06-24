@@ -1,3 +1,6 @@
+//
+// Created by Usuario on 24/06/2026.
+//
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -35,7 +38,7 @@ string bipartite_graph_check(vector<vi> &AL, int n) {
     if (isBipartite) {
         return "BICOLORABLE.";
     }
-        return "NOT BICOLORABLE.";
+    return "NOT BICOLORABLE.";
 }
 
 int main() {
