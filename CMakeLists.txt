@@ -15,4 +15,5 @@ add_executable(Programacao_Competitiva
         Solucoes/Kattis/teste.cpp
         Solucoes/UVA/teste.cpp
         main.cpp
-        "Solucoes/UVA/Grafos/Bicoloring - 10004.cpp")
+        "Solucoes/UVA/Grafos/Bicoloring - 10004.cpp"
+        Algoritmos/Grafos/ArticulationVertexAndBridges.cpp)
