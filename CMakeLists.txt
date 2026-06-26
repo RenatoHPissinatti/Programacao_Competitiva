@@ -17,4 +17,5 @@ add_executable(Programacao_Competitiva
         main.cpp
         "Solucoes/UVA/Grafos/Bicoloring - 10004.cpp"
         Algoritmos/Grafos/ArticulationVertexAndBridges.cpp
-        Algoritmos/Grafos/Kosaraju_Tarjan.cpp)
+        Algoritmos/Grafos/Kosaraju_Tarjan.cpp
+        "Solucoes/UVA/Grafos/Come and Go - 11838.cpp")
