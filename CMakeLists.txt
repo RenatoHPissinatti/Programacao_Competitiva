@@ -16,4 +16,5 @@ add_executable(Programacao_Competitiva
         Solucoes/UVA/teste.cpp
         main.cpp
         "Solucoes/UVA/Grafos/Bicoloring - 10004.cpp"
-        Algoritmos/Grafos/ArticulationVertexAndBridges.cpp)
+        Algoritmos/Grafos/ArticulationVertexAndBridges.cpp
+        Algoritmos/Grafos/Kosaraju_Tarjan.cpp)
