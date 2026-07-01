@@ -19,4 +19,6 @@ add_executable(Programacao_Competitiva
         Algoritmos/Grafos/ArticulationVertexAndBridges.cpp
         Algoritmos/Grafos/Kosaraju_Tarjan.cpp
         "Solucoes/UVA/Grafos/Come and Go - 11838.cpp"
-        "Solucoes/UVA/Grafos/Calling Circles - 247.cpp")
+        "Solucoes/UVA/Grafos/Calling Circles - 247.cpp"
+        template.cpp
+        "Solucoes/UVA/Grafos/Lighting Away - 11770.cpp")
