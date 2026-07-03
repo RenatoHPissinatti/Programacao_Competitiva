@@ -21,4 +21,5 @@ add_executable(Programacao_Competitiva
         "Solucoes/UVA/Grafos/Come and Go - 11838.cpp"
         "Solucoes/UVA/Grafos/Calling Circles - 247.cpp"
         template.cpp
-        "Solucoes/UVA/Grafos/Lighting Away - 11770.cpp")
+        "Solucoes/UVA/Grafos/Lighting Away - 11770.cpp"
+        "Solucoes/UVA/Grafos/Rare Order - 200.cpp")
