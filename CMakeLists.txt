@@ -24,3 +24,7 @@ add_executable(Programacao_Competitiva
         "Solucoes/UVA/Grafos/Lighting Away - 11770.cpp"
         "Solucoes/UVA/Grafos/Rare Order - 200.cpp"
         "Solucoes/UVA/Grafos/Beverages - 11060.cpp")
+        Solucoes/UVA/Matemática/BinomialTheorem11955.cpp
+        Solucoes/UVA/Matemática/BinomialTheorem11955.h
+        "Solucoes/UVA/Matemática/Binomial Theorem - 11955.cpp"
+        Algoritmos/Matematica/Triangulo_Pascal_BottomUp_DP.cpp)
