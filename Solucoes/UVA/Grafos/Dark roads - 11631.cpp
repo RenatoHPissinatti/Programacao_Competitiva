@@ -50,27 +50,6 @@ int n, m;
 
 int main() {
     fastio;
-    while (cin >> n >> m && (n != 0 || m != 0)) {
-        EL.assign(m, tuple<int, int, int>());
-        ll total = 0;
-        for (int i = 0; i < m; ++i) {
-            int u, v, w;
-            cin >> u >> v >> w;
-            EL[i] = {w, u, v};
-            total += w;
-        }
-        sort(EL.begin(), EL.end());
 
-        ll mst_cost = 0, num_taken = 0;
-        UnionFind UF(n);
-        for (auto &[w, u, v] : EL) {
-            if (UF.isSameSet(u, v)) continue;
-            mst_cost += w;
-            UF.unionSet(u, v);
-            ++num_taken;
-            if (num_taken == n - 1) break;
-        }
-        cout << total - mst_cost << '\n';
-    }
     return 0;
 }
