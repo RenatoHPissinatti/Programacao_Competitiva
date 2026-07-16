@@ -29,7 +29,9 @@ add_executable(Programacao_Competitiva
         "Solucoes/UVA/Grafos/Heavy Cycle Edges - 11747.cpp"
         "Solucoes/UVA/Grafos/Audiophobia - 10048.cpp"
         "Solucoes/Codeforces/Matematica/2246B- ezraft and .cpp"
-        "Solucoes/UVA/DP/UVa 10912 - Simple minded Hashing.cpp")
+        "Solucoes/UVA/DP/UVa 10912 - Simple minded Hashing.cpp"
+        "Solucoes/UVA/DP/UVA 11420- Chest of drawners.cpp"
+        "Solucoes/UVA/DP/UVa 13141- Growing Trees.cpp")
         Solucoes/UVA/Matemática/BinomialTheorem11955.cpp
         Solucoes/UVA/Matemática/BinomialTheorem11955.h
         "Solucoes/UVA/Matemática/Binomial Theorem - 11955.cpp"
