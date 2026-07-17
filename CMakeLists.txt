@@ -31,7 +31,8 @@ add_executable(Programacao_Competitiva
         "Solucoes/Codeforces/Matematica/2246B- ezraft and .cpp"
         "Solucoes/UVA/DP/UVa 10912 - Simple minded Hashing.cpp"
         "Solucoes/UVA/DP/UVA 11420- Chest of drawners.cpp"
-        "Solucoes/UVA/DP/UVa 13141- Growing Trees.cpp")
+        "Solucoes/UVA/DP/UVa 13141- Growing Trees.cpp"
+        "Solucoes/UVA/Matemática/UVa 1644.cpp")
         Solucoes/UVA/Matemática/BinomialTheorem11955.cpp
         Solucoes/UVA/Matemática/BinomialTheorem11955.h
         "Solucoes/UVA/Matemática/Binomial Theorem - 11955.cpp"
