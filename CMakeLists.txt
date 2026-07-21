@@ -27,7 +27,8 @@ add_executable(Programacao_Competitiva
         "Solucoes/UVA/Grafos/Dark roads - 11631.cpp"
         "Solucoes/UVA/Grafos/Transportation system - 11228.cpp"
         "Solucoes/UVA/Grafos/Heavy Cycle Edges - 11747.cpp"
-        "Solucoes/UVA/Grafos/Audiophobia - 10048.cpp")
+        "Solucoes/UVA/Grafos/Audiophobia - 10048.cpp"
+        "Solucoes/UVA/Grafos/Island Hopping - 1013.cpp")
         Solucoes/UVA/Matemática/BinomialTheorem11955.cpp
         Solucoes/UVA/Matemática/BinomialTheorem11955.h
         "Solucoes/UVA/Matemática/Binomial Theorem - 11955.cpp"
