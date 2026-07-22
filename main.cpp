@@ -79,7 +79,7 @@ int main() {
 
                     UF.unionSet(u, v);
                     maxVal = w;
-                    
+
                     if (UF.isSameSet(s, d)) {
                         ans = min(ans, maxVal - minVal);
                         break;
