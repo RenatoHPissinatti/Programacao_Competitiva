@@ -29,7 +29,8 @@ add_executable(Programacao_Competitiva
         "Solucoes/UVA/Grafos/Heavy Cycle Edges - 11747.cpp"
         "Solucoes/UVA/Grafos/Audiophobia - 10048.cpp"
 <<<<<<< HEAD
-        "Solucoes/UVA/Grafos/Island Hopping - 1013.cpp")
+        "Solucoes/UVA/Grafos/Island Hopping - 1013.cpp"
+        "Solucoes/UVA/Grafos/Magic Car - 10457.cpp")
 =======
         "Solucoes/Codeforces/Matematica/2246B- ezraft and .cpp"
         "Solucoes/UVA/DP/UVa 10912 - Simple minded Hashing.cpp"

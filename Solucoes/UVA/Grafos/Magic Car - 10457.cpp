@@ -1,3 +1,6 @@
+//
+// Created by Usuario on 22/07/2026.
+//
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -79,7 +82,7 @@ int main() {
 
                     UF.unionSet(u, v);
                     maxVal = w;
-                    
+
                     if (UF.isSameSet(s, d)) {
                         ans = min(ans, maxVal - minVal);
                         break;
