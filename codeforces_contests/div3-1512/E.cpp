@@ -47,26 +47,31 @@ int main() {
             res[i-1] = i;
             sumAtual += i;
         }
-        int aumento = 0;
-        int maxsum = ((n+1)*n)/2;
-        int j = 0;
-        for (; aumento < n - res[qntdnums-1]; aumento++) {
-            sumAtual = sumAtual + aumento*qntdnums;
-            j = 0;
-            for (int i = sumAtual; i <= maxsum && j <= n - res[qntdnums-1]; i++, j++) {
-                if (i == s) {
-                    sumAtual = i;
+        int maiorval = n;
+        for (int i = qntdnums -1; i >= 0; i--) {
+            int valAtual = res[i];
+            bool flag = false;
+            sumAtual -= valAtual;
+            for (; valAtual <= maiorval; valAtual++) {
+                if (sumAtual+valAtual == s) {
+                    flag = true;
                     break;
                 }
             }
-            if (sumAtual == s) break;
+            if (valAtual > maiorval) {
+                valAtual = maiorval;
+            }
+            maiorval = valAtual - 1;
+            res[i] = valAtual;
+            sumAtual += valAtual;
+            if (flag) {
+                break;
+            }
         }
-        res[qntdnums-1] += j;
         set<int> res1;
         for (int val : res) {
-            res1.insert(val+aumento);
+            res1.insert(val);
         }
-
         int countvalue = 1;
         int i = 1;
         while (i < l) {
