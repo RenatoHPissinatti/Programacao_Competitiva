@@ -37,7 +37,8 @@ add_executable(Programacao_Competitiva
         "Solucoes/UVA/Matemática/UVa 11401- Triangle counting.cpp"
         "Solucoes/UVA/Matemática/UVa 12463- Little Nephew.cpp"
         "Solucoes/UVA/Matemática/UVa 10784- Diagonal.cpp"
-        "Solucoes/UVA/Matemática/UVa 1244 - Tile Code.cpp")
+        "Solucoes/UVA/Matemática/UVa 1244 - Tile Code.cpp"
+        "Solucoes/UVA/DP/UVa 672- Gangsters.cpp")
         Solucoes/UVA/Matemática/BinomialTheorem11955.cpp
         Solucoes/UVA/Matemática/BinomialTheorem11955.h
         "Solucoes/UVA/Matemática/Binomial Theorem - 11955.cpp"
