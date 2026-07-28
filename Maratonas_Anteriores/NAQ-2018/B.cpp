@@ -16,6 +16,15 @@ const int MOD = 1000000007;
 
 int main() {
     fastio;
+    int a, b, t;
+    cin >> a >> b >>t;
+    int aaa = lcm(a, b);
+    if (t > 0 && lcm(a,b) <= t) {
+        cout << "yes" << '\n';
+    }
+    else {
+        cout << "no" << '\n';
+    }
 
     return 0;
 }
