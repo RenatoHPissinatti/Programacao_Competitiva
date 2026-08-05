@@ -15,11 +15,23 @@ const ll LINF = LLONG_MAX/4;
 const int MOD = 1000000007;
 
 
-void dfs(int u, vector<vector<int>>& adj, int h, vector<int>& hn) { //soma dos filhos e retorna altura max
-    hn[u] = h;
+int dfs(int u, vector<vector<int>>& adj, vector<int>& secondDeep) { //soma dos filhos e retorna altura max
+    int maiorH = 0;
+    int secondMaiorH = -1;
     for (int v : adj[u]) {
-        dfs(v, adj, h+1, hn);
+        int next = dfs(v, adj, secondDeep);
+        if (next >= maiorH) {
+            secondMaiorH = maiorH;
+            maiorH = next;
+        }
+        else {
+            if (next > secondMaiorH) {
+                secondMaiorH = next;
+            }
+        }
     }
+    secondDeep[u] = secondMaiorH;
+    return maiorH + 1;
 }
 
 
@@ -36,11 +48,16 @@ int main() {
             cin >> v;
             adj[v].push_back(i);
         }
-        vector<int> alturas(n+1, 0);
-        dfs(1, adj, 0, alturas);
-        for (int i = n; i >= 0; i--) {
-
+        vector<int> secondMaior(n+1, 0);
+        dfs(1, adj, secondMaior);
+        ll somaTotal = 0;
+        for (int i = 1; i <= n ; i++) {
+            if (secondMaior[i] != -1) {
+                somaTotal+=secondMaior[i];
+            }
         }
+        somaTotal+=n;
+        cout << somaTotal << '\n';
     }
 
     return 0;
