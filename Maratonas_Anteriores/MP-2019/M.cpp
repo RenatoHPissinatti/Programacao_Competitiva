@@ -20,20 +20,61 @@ const int INF = 1e9;
 const ll LINF = LLONG_MAX/4;
 const int MOD = 1000000007;
 
+bool conseguenotempo (ll t, ll vel, ll pessoas, vector<ll>& pipocas) {
+    ll pipocastotais = t*vel;
+    ll pessoaAtual = t*vel;
+    for (int i = 0; i < pipocas.size(); i++) {
+        if (pipocas[i] <= pessoaAtual) {
+            pessoaAtual -= pipocas[i];
+        }
+        else {
+            pessoas--;
+            if (pessoas <= 0) {
+                return false;
+            }
+            pessoaAtual = pipocastotais;
+            if (pipocas[i] <= pessoaAtual) {
+                pessoaAtual -= pipocas[i];
+            }
+            else {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 int main() {
     fastio;
-    int n, c, t;
+    ll n, c, t;
     cin >> n >> c >> t;
     ll somatotal = 0;
-    vector<int> pipocas(n);
+    vector<ll> pipocas(n);
     for (int i = 0; i < n;i++) {
-        int val;
+        ll val;
         cin >> val;
         pipocas[i] = val;
-        somatotal+=val
+        somatotal +=val;
     }
-
-
+    ll menort = 1;
+    ll maiort = (somatotal + t - 1)/t;
+    ll atual = (maiort + menort)/2;
+    while (atual != maiort && atual != menort) {
+        if (conseguenotempo(atual, t, c, pipocas)) {
+            maiort = atual;
+            atual = (menort + atual)/2;
+        }
+        else {
+            menort = atual;
+            atual = (maiort + atual)/2;
+        }
+    }
+    if (conseguenotempo(atual, t, c, pipocas)) {
+        cout << atual << '\n';
+    }
+    else {
+        cout << maiort << '\n';
+    }
 
     return 0;
 

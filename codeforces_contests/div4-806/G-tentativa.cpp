@@ -26,11 +26,10 @@ int main() {
         for (int i = 0; i < n; i++) {
             cin >> ordem[i];
         }
-        vector<vector<ll>> div2(n, vector<ll>(30, 0));
+        vector<vector<ll>> div2(n, vector<ll>(31, 0));
         for (int i = 0; i < n; i++) {
             div2[i][0] = ordem[i];
         }
-        ll div = 2;
         for (int i = 0; i < n; i++) {
             for (int exp = 1; exp <= 30; exp++) {
                 div2[i][exp] = div2[i][exp-1]/2;
@@ -39,15 +38,28 @@ int main() {
                 }
             }
         }
-        for (ll i = n-2; i >= 0; i--) {
-            for (int exp = 0; exp <= 30; exp++) {
-                div2[i][exp] += div2[i+1][exp];
+
+        vector<vector<ll>> dp(n+1, vector<ll>(31, (LLONG_MAX/4)*-1));
+        dp[0][0] = 0;
+        for (int i = 0; i < n; i++) {
+            for (int exp = 0; exp <= i+1 && exp <= 30; exp++) {
+                if (dp[i][exp] ==(LLONG_MAX/4)*-1) continue;
+
+
+                dp[i+1][exp] = max(dp[i+1][exp], dp[i][exp] + div2[i][exp] - k);
+                int proxExp = min(30, exp + 1);
+                dp[i+1][proxExp] = max(dp[i+1][exp], dp[i][exp] + div2[i][proxExp]);
             }
         }
-        vector<ll> dp(n, 0);
+        ll maior = 0;
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j <= 30; j++) {
+                maior = max(maior, dp[i][j]);
+            }
+        }
+        cout << maior << '\n';
 
-
-    }
+    },3,
 
     return 0;
 }
