@@ -20,20 +20,16 @@ const int MOD = 1000000007;
 const int UNVISITED = -1;
 const int VISITED = 1;
 
-vector<vector<int>> AL;
-vector<int> caminhos;
-
 int main() {
     fastio;
-    int n, k;
-    cin >> n >> k;
-    AL.assign(n+1, vector<int>());
-    caminhos.assign(n+1, 0);
-    for (int c = 2; c <= n; ++c) {
-        int p; cin >> p;
-        AL[p].push_back(c);
-    }
+    ll n;
+    cin >> n ;
+    ll a;
+    a=__builtin_popcountll(n);
 
+
+    ll d= 1LL<<a;
+    cout<<d<<"\n";
 
     return 0;
 

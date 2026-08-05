@@ -1,6 +1,9 @@
 //
 // Created by Usuario on 04/08/2026.
 //
+//
+// Created by Usuario on 04/08/2026.
+//
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,22 +20,19 @@ const int INF = 1e9;
 const ll LINF = LLONG_MAX/4;
 const int MOD = 1000000007;
 
-const int UNVISITED = -1;
-const int VISITED = 1;
-
-vector<vector<int>> AL;
-vector<int> caminhos;
-
 int main() {
     fastio;
-    int n, k;
-    cin >> n >> k;
-    AL.assign(n+1, vector<int>());
-    caminhos.assign(n+1, 0);
-    for (int c = 2; c <= n; ++c) {
-        int p; cin >> p;
-        AL[p].push_back(c);
+    int n, c, t;
+    cin >> n >> c >> t;
+    ll somatotal = 0;
+    vector<int> pipocas(n);
+    for (int i = 0; i < n;i++) {
+        int val;
+        cin >> val;
+        pipocas[i] = val;
+        somatotal+=val
     }
+
 
 
     return 0;

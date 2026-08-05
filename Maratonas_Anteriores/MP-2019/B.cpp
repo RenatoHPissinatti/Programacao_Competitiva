@@ -1,8 +1,4 @@
-//
-// Created by Usuario on 04/08/2026.
-//
 #include <bits/stdc++.h>
-
 using namespace std;
 
 #define fastio ios::sync_with_stdio(false); cin.tie(nullptr);
@@ -20,21 +16,24 @@ const int MOD = 1000000007;
 const int UNVISITED = -1;
 const int VISITED = 1;
 
-vector<vector<int>> AL;
-vector<int> caminhos;
-
 int main() {
     fastio;
-    int n, k;
-    cin >> n >> k;
-    AL.assign(n+1, vector<int>());
-    caminhos.assign(n+1, 0);
-    for (int c = 2; c <= n; ++c) {
-        int p; cin >> p;
-        AL[p].push_back(c);
+    int n;
+    cin >> n;
+    int maior = 0;
+    int bobo;
+    cin >> bobo;
+    maior = bobo;
+    for (int i = 1; i < n; i++) {
+        int val;
+        cin >> val;
+        maior = max(maior, val);
     }
-
-
+    if (maior == bobo) {
+        cout << 'S' << '\n';
+    }
+    else {
+        cout << 'N' << '\n';
+    }
     return 0;
-
 }

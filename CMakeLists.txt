@@ -30,7 +30,14 @@ add_executable(Programacao_Competitiva
         "Solucoes/UVA/Grafos/Audiophobia - 10048.cpp"
 <<<<<<< HEAD
         "Solucoes/UVA/Grafos/Island Hopping - 1013.cpp"
-        "Solucoes/UVA/Grafos/Mice and Maze - 1112.cpp")
+        "Solucoes/UVA/Grafos/Mice and Maze - 1112.cpp"
+        Maratonas_Anteriores/MP2019.cpp
+        Maratonas_Anteriores/MP-2019/B.cpp
+        Maratonas_Anteriores/MP-2019/Resto.cpp
+        Maratonas_Anteriores/MP-2019/H.cpp
+        Maratonas_Anteriores/MP-2019/L.cpp
+        Maratonas_Anteriores/MP-2019/D.cpp
+        Maratonas_Anteriores/MP-2019/M.cpp)
 =======
         "Solucoes/Codeforces/Matematica/2246B- ezraft and .cpp"
         "Solucoes/UVA/DP/UVa 10912 - Simple minded Hashing.cpp"
