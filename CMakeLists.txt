@@ -35,7 +35,8 @@ add_executable(Programacao_Competitiva
         Maratonas_Anteriores/MP-2020/G.cpp
         Maratonas_Anteriores/MP-2020/F.cpp
         Maratonas_Anteriores/MP-2020/E.cpp
-        Maratonas_Anteriores/MP-2020/L.cpp)
+        Maratonas_Anteriores/MP-2020/L.cpp
+        "Solucoes/Codeforces/Grafos/339D - Xenia and Bit Operations.cpp")
 =======
         "Solucoes/Codeforces/Matematica/2246B- ezraft and .cpp"
         "Solucoes/UVA/DP/UVa 10912 - Simple minded Hashing.cpp"
