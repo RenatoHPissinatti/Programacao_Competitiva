@@ -2,6 +2,8 @@
 using namespace std;
 
 #define fastio ios::sync_with_stdio(false); cin.tie(nullptr);
+
+#define fastio ios::sync_with_stdio(false); cin.tie(nullptr);
 #define ll long long
 #define pii pair<int, int>
 #define pll pair<ll, ll>
@@ -13,82 +15,97 @@ const int INF = 1e9;
 const ll LINF = LLONG_MAX/4;
 const int MOD = 1000000007;
 
-const int UNVISITED = -1;
-const int VISITED = 1;
+vi a;
+int parity;
+vi height;
 
-int minEnergy;
-int maxEnergy;
-int totalEnergy;
+const int or_op = 1;
+const int xor_op = 0;
 
-class UnionFind {
+class SegmentTree {
 private:
-    vector<int> p, rank, setSize;
+    int n;
+    vi A, st, lazy;
+
+    ll l(ll p) {return p << 1;}
+    ll r(ll p) {return (p << 1) + 1;}
+
+    int conquer (int a, int b, int op) {
+        if (op == or_op) {
+            return a | b;
+        }
+        return a ^ b;
+    }
+
+    void build(ll p, int L, int R, int h) {
+        if (L == R) {
+            st[p] = a[L];
+            height[p] = 0;
+        } else {
+            int m = (L+R)/2;
+            build(l(p), L, m, h+1);
+            build(r(p), m + 1, R, h+1);
+
+            height[p] = height[l(p)] + 1;
+            if (height[p] % 2 == 1) {
+                st[p] = conquer(st[l(p)], st[r(p)], or_op);
+            } else st[p] = conquer(st[l(p)], st[r(p)], xor_op);
+
+        }
+    }
+
+    void update(ll p, int L, int R,int i, int val) {
+        if (L == R) {
+            st[p] = val;
+            return;
+        }
+
+        int m = (L+R)/2;
+        if (i <= m) update(l(p), L, m, i, val);
+        else update(r(p), m + 1, R, i, val);
+
+        if (height[p] % 2 == 1) {
+            st[p] = conquer(st[l(p)], st[r(p)], or_op);
+        } else st[p] = conquer(st[l(p)], st[r(p)], xor_op);
+    }
+
 public:
-    UnionFind (int n) {
-        p.assign(n, 0);
-        for (int i = 0; i < n; ++i) p[i] = i;
-        rank.assign(n, 0);
-        setSize.assign(n, 1);
+    SegmentTree(int sz) : n(sz), st(4*n), lazy(4*n, -1) {}
+
+    SegmentTree(const vi &initialA) : SegmentTree((int)initialA.size()) {
+        A = initialA;
+        build(1, 0, n-1, 0);
     }
 
-    int findSet (int i) {return (p[i] == i ? i : (p[i] = findSet(p[i]))); }
-    int isSameSet (int i, int j) { return (findSet(i) == findSet(j));}
-
-    void unionSet (int i, int j) {
-        if (isSameSet(i, j)) return;
-        int x = findSet(i), y = findSet(j);
-        if (rank[x] > rank[y]) swap(x, y);
-        p[x] = y;
-        if (rank[x] == rank[y]) ++rank[y];
-        setSize[y] += setSize[x];
+    void update(int i, int val) {
+        update(1, 0, n - 1, i, val);
     }
+
+    int result() {
+        return st[1];
+    }
+
 };
 
+
 int main() {
-    //fastio;
+    fastio;
     int n, m;
-    while (cin >> n >> m) {
-        vector<tuple<int,int,int>> EL(m);
-        for (int i = 0; i < m; ++i) {
-            int start, end, speed;
-            cin >> start >> end >> speed;
-            --start; --end;
-            EL[i] = {speed, start, end};
-        }
+    cin >> n >> m;
+    parity = n % 2;
 
-        sort(EL.begin(), EL.end());
+    a.resize(1<<n);
+    height.resize(4*(1<<n));
+    for (auto & i : a) cin >> i;
 
-        int startEnergy, endEnergy;
-        cin >> startEnergy >> endEnergy;
-        int k; cin >> k;
-
-        int minVal = 0, maxVal = 0;
-        for (int i = 0; i < k; ++i) {
-            int s, d; cin >> s >> d;
-            --s; --d;
-            if (s == d) {
-                cout << startEnergy + endEnergy << '\n';
-                continue;
-            }
-            int ans = INF;
-            for (int j = 0; j < m; ++j) {
-                UnionFind UF(n);
-                minVal = get<0>(EL[j]);
-                for (int l = j; l < m; ++l) {
-                    auto [w, u, v] = EL[l];
-
-                    UF.unionSet(u, v);
-                    maxVal = w;
-
-                    if (UF.isSameSet(s, d)) {
-                        ans = min(ans, maxVal - minVal);
-                        break;
-                    }
-                }
-
-            }
-            cout << startEnergy + ans + endEnergy << '\n';
-        }
-
+    SegmentTree st(a);
+    for (int i = 0; i < m; ++i) {
+        int p; int b;
+        cin >> p >> b;
+        --p;
+        st.update(p, b);
+        cout << st.result() << '\n';
     }
+
+    return 0;
 }
