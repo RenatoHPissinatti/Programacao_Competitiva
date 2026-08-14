@@ -36,7 +36,19 @@ add_executable(Programacao_Competitiva
         Maratonas_Anteriores/MP-2020/F.cpp
         Maratonas_Anteriores/MP-2020/E.cpp
         Maratonas_Anteriores/MP-2020/L.cpp
-        "Solucoes/Codeforces/Grafos/339D - Xenia and Bit Operations.cpp")
+        "Solucoes/Codeforces/Grafos/339D - Xenia and Bit Operations.cpp"
+        Maratonas_Anteriores/MP-2021/E.cpp
+        Maratonas_Anteriores/MP-2021/K.cpp
+        Maratonas_Anteriores/MP-2021/H.cpp
+        Maratonas_Anteriores/MP-2021/M.cpp
+        Maratonas_Anteriores/MP-2021/N.cpp
+        Maratonas_Anteriores/MP-2021/G.cpp
+        Maratonas_Anteriores/MP-2022/I.cpp
+        Maratonas_Anteriores/MP-2022/A.cpp
+        Maratonas_Anteriores/MP-2021/F.cpp
+        Maratonas_Anteriores/MP-2022/E.cpp
+        Maratonas_Anteriores/MP-2022/F.cpp
+        Maratonas_Anteriores/MP-2022/J.cpp)
 =======
         "Solucoes/Codeforces/Matematica/2246B- ezraft and .cpp"
         "Solucoes/UVA/DP/UVa 10912 - Simple minded Hashing.cpp"

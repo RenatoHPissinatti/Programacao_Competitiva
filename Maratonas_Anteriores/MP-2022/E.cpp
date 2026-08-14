@@ -14,29 +14,28 @@ const int INF = 1e9;
 const ll LINF = LLONG_MAX/4;
 const int MOD = 1000000007;
 
-
-
 int main() {
     fastio;
-    int n ;
+    int n;
     cin >> n;
-    int a, b;
-    cin >> a >> b;
-    int d=1<<(n-1);
-    int count,count2;
-    count=0;
-    count2=0;
-    while (d%2==0) {
-        d/=2;
-        count++;
-    }
-    while (a%2==0) {
-        a/=2;
-        count2++;
-    }
-    int count3=abs(count-count2);
 
-    cout<<count3<<endl;
+    int count = 0;
+    vector<int>flechas(10e6+2, 0);
+    for (int i = 0; i < n; i++) {
+        int balao;
+        cin >> balao;
+        if (flechas[balao] >= 1) {
+            flechas[balao]--;
+        }
+        else {
+            count++;
+        }
+        if (balao - 1 > 0) {
+            flechas[balao-1]++;
+        }
+    }
+
+    cout << count << '\n';
 
     return 0;
 }

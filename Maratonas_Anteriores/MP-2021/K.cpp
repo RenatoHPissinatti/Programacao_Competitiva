@@ -14,29 +14,28 @@ const int INF = 1e9;
 const ll LINF = LLONG_MAX/4;
 const int MOD = 1000000007;
 
-
-
 int main() {
     fastio;
-    int n ;
-    cin >> n;
-    int a, b;
-    cin >> a >> b;
-    int d=1<<(n-1);
-    int count,count2;
-    count=0;
-    count2=0;
-    while (d%2==0) {
-        d/=2;
-        count++;
+    int t, d, m;
+    cin >> t >> d >> m;
+    int last = 0;
+    bool flag = false;
+    int atual;
+    for (int i = 0; i < m; i++) {
+        cin >> atual;
+        if (atual - last >= t) {
+            flag = true;
+        }
+        last = atual;
     }
-    while (a%2==0) {
-        a/=2;
-        count2++;
+    if (d - last >= t) {
+        flag = true;
     }
-    int count3=abs(count-count2);
-
-    cout<<count3<<endl;
-
+    if (flag) {
+        cout << 'Y' << '\n';
+    }
+    else {
+        cout << 'N' << '\n';
+    }
     return 0;
 }
