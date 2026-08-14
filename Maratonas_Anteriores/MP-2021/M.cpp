@@ -16,57 +16,45 @@ const int MOD = 1000000007;
 
 vector<vector<int>> AL;
 vector<bool> vivo;
-vector<int> p;
-bool has_found;
-int rei_atual;
-
-void novo_rei(int rei) {
-    if (has_found) return;
-    if (vivo[rei]) {
-        has_found = true;
-        rei_atual = rei;
+int son = 2;
+int n;
+bool first = true;
+void hierarchy(int king) {
+    if (vivo[king] == false) {
+        for (int v : AL[king]) {
+            hierarchy(v);
+        }
         return;
     }
-
-    for (int filho : AL[rei]) {
-        if (vivo[filho]) {
-            has_found = true;
-            rei_atual = filho;
-            return;
+    if (!first && n >= 0) cout << king << '\n';
+    first = false;
+    while (n-- > 0) {
+        int op, u;
+        cin >> op >> u;
+        if (op == 1) {
+            AL[u].push_back(son);
+            ++son;
+        } else {
+            vivo[u] = false;
+            if (u == king) {
+                for (int v : AL[king]) {
+                        hierarchy(v);
+                }
+                return;
+            }
+            cout << king << '\n';
         }
-        return novo_rei(filho);
     }
-    for (int irmao : AL[p[rei]]) {
-        if (vivo[irmao]) {
-            has_found = true;
-            rei_atual = irmao;
-            return;
-        }
-    }
-    return novo_rei(p[rei]);
 }
+
+
 
 int main() {
     fastio;
-    int q; cin >> q;
-    AL.assign(q+1, vector<int>());
-    vivo.assign(q+1, true);
-    p.assign(q+1, 0);
+    cin >> n;
+    AL.assign(n+2, vector<int>());
+    vivo.assign(n+2, true);
+    hierarchy(1);
 
-    int f = 2;
-    rei_atual = 1;
-    for (int i = 0; i < q; ++i) {
-        int t, x; cin >> t >> x;
-        if (t == 1) {
-            AL[x].push_back(f);
-            p[f] = x;
-            ++f;
-        } else {
-            has_found = false;
-            vivo[x] = false;
-            novo_rei(rei_atual);
-            cout << rei_atual << '\n';
-        }
-    }
     return 0;
 }
