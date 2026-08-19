@@ -29,7 +29,32 @@ add_executable(Programacao_Competitiva
         "Solucoes/UVA/Grafos/Heavy Cycle Edges - 11747.cpp"
         "Solucoes/UVA/Grafos/Audiophobia - 10048.cpp"
 <<<<<<< HEAD
-        "Solucoes/UVA/Grafos/Island Hopping - 1013.cpp")
+        "Solucoes/UVA/Grafos/Island Hopping - 1013.cpp"
+        Maratonas_Anteriores/MP-2020.cpp
+        Maratonas_Anteriores/MP-2020/B.cpp
+        Maratonas_Anteriores/MP-2020/G.cpp
+        Maratonas_Anteriores/MP-2020/F.cpp
+        Maratonas_Anteriores/MP-2020/E.cpp
+        Maratonas_Anteriores/MP-2020/L.cpp
+        "Solucoes/Codeforces/Grafos/339D - Xenia and Bit Operations.cpp"
+        Maratonas_Anteriores/MP-2021/E.cpp
+        Maratonas_Anteriores/MP-2021/K.cpp
+        Maratonas_Anteriores/MP-2021/H.cpp
+        Maratonas_Anteriores/MP-2021/M.cpp
+        Maratonas_Anteriores/MP-2021/N.cpp
+        Maratonas_Anteriores/MP-2021/G.cpp
+        Maratonas_Anteriores/MP-2022/I.cpp
+        Maratonas_Anteriores/MP-2022/A.cpp
+        Maratonas_Anteriores/MP-2021/F.cpp
+        Maratonas_Anteriores/MP-2022/E.cpp
+        Maratonas_Anteriores/MP-2022/F.cpp
+        Maratonas_Anteriores/MP-2022/J.cpp
+        "Solucoes/Codeforces/Grafos/472D - Design Tutorial Inverse the Problem.cpp"
+        Maratonas_Anteriores/MP-2023/A.cpp
+        Maratonas_Anteriores/MP-2023/F.cpp
+        Maratonas_Anteriores/MP-2023/L.cpp
+        Maratonas_Anteriores/MP-2023/I.cpp
+        Maratonas_Anteriores/MP-2023/M.cpp)
 =======
         "Solucoes/Codeforces/Matematica/2246B- ezraft and .cpp"
         "Solucoes/UVA/DP/UVa 10912 - Simple minded Hashing.cpp"
