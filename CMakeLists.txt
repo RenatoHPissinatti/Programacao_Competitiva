@@ -48,7 +48,13 @@ add_executable(Programacao_Competitiva
         Maratonas_Anteriores/MP-2021/F.cpp
         Maratonas_Anteriores/MP-2022/E.cpp
         Maratonas_Anteriores/MP-2022/F.cpp
-        Maratonas_Anteriores/MP-2022/J.cpp)
+        Maratonas_Anteriores/MP-2022/J.cpp
+        "Solucoes/Codeforces/Grafos/472D - Design Tutorial Inverse the Problem.cpp"
+        Maratonas_Anteriores/MP-2023/A.cpp
+        Maratonas_Anteriores/MP-2023/F.cpp
+        Maratonas_Anteriores/MP-2023/L.cpp
+        Maratonas_Anteriores/MP-2023/I.cpp
+        Maratonas_Anteriores/MP-2023/M.cpp)
 =======
         "Solucoes/Codeforces/Matematica/2246B- ezraft and .cpp"
         "Solucoes/UVA/DP/UVa 10912 - Simple minded Hashing.cpp"

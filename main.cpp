@@ -1,3 +1,6 @@
+//
+// Created by Usuario on 18/08/2026.
+//
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -14,47 +17,44 @@ const int INF = 1e9;
 const ll LINF = LLONG_MAX/4;
 const int MOD = 1000000007;
 
+
 vector<vector<int>> AL;
-vector<bool> vivo;
-int son = 2;
-int n;
-bool first = true;
-void hierarchy(int king) {
-    if (vivo[king] == false) {
-        for (int v : AL[king]) {
-            hierarchy(v);
-        }
-        return;
-    }
-    if (!first && n >= 0) cout << king << '\n';
-    first = false;
-    while (n-- > 0) {
-        int op, u;
-        cin >> op >> u;
-        if (op == 1) {
-            AL[u].push_back(son);
-            ++son;
+vector<int> likes;
+vector<int> ans;
+
+void dfs(int u, int l, int qtd_likes) {
+
+    for (int v : AL[u]) {
+        if (likes[v] > l) {
+            ans[v] = qtd_likes + 1;
+            dfs(v, likes[v], qtd_likes + 1);
         } else {
-            vivo[u] = false;
-            if (u == king) {
-                for (int v : AL[king]) {
-                        hierarchy(v);
-                }
-                return;
-            }
-            cout << king << '\n';
+            ans[v] = qtd_likes;
+            dfs(v, min(likes[u], likes[v]), qtd_likes);
         }
     }
 }
 
-
-
 int main() {
     fastio;
-    cin >> n;
-    AL.assign(n+2, vector<int>());
-    vivo.assign(n+2, true);
-    hierarchy(1);
+    int n; cin >> n;
+    vector<int> p(n+1, 0);
+    AL.assign(n+1, vector<int>());
+    for (int i = 2; i <= n; ++i) {
+        int pai; cin >> pai;
+        p[i] = pai;
+        AL[pai].push_back(i);
+    }
+    likes.resize(n+1);
+    for (int i = 1; i <= n; ++i) {
+        int like; cin >> like;
+        likes[i] = like;
+    }
+    ans.assign(n+1, 1);
+    dfs(1, likes[1], 1);
 
+    for (int i = 2; i <= n; ++i) {
+        cout << ans[i] << " ";
+    }
     return 0;
 }
