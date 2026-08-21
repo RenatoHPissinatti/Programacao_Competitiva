@@ -17,57 +17,31 @@ const int MOD = 1000000007;
 
 int main() {
     fastio;
-    ll n;
-    cin>>n;
-    vector<ll> DP(100001, -1);
-    vector<ll> vec;
-    ll count1=0;
-    for (ll i=0;i<n;i++) {
-        ll a;
-        cin>>a;
-        if (a==1) {
-            count1++;
+    int n; cin >> n;
+    ll si = 0;
+    ll sp = 0;
+    ll res = 0;
+    for (int i  = 0; i < n; i++) {
+        int val;
+        cin >> val;
+        ll siAtual = 0;
+        ll spAtual = 0;
+        if (val == 1) {
+            siAtual++;
+            siAtual += sp;
+            spAtual += si;
         }
-        vec.push_back(a);
+        else {
+            spAtual++;
+            spAtual += sp;
+            siAtual += si;
+        }
+        res += siAtual;
+        si = siAtual;
+        sp = spAtual;
     }
-    for (ll i=1;i<=n;i++) {
-        if (i==1) {
-            DP[0]=0;
-            DP[1]=count1;
-            continue;
-        }
-        ll count4=0;
-        ll count3=0;
-        for (ll j=0;j<=n-i;j++) {
 
 
-            if (j==0) {
-
-                for (ll k=0;k<i;k++) {
-                    count3+=vec[k];
-                }
-                if (count3%2!=0) {
-                    count4++;
-                }
-                continue;
-            }
-            if (vec[j-1]==1) {
-                count3--;
-            }
-            if (vec[(n-i)+j]==1) {
-                count3++;
-            }
-            if (count3%2!=0) {
-                count4++;
-            }
-
-
-        }
-        DP[i]=DP[i-1]+count4;
-    }
-    cout << DP[n]<< '\n';
+    cout << res << '\n';
     return 0;
 }
-//
-// Created by Usuario on 18/08/2026.
-//
