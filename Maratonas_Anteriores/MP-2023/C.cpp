@@ -27,36 +27,20 @@ vector<int> A;
 vector<int> L, L_id;
 
 vector<int> likes;
-int ans;
-void print_u (int u) {
-    ++ans;
-    if (p[u] == -1) { return; }
-    print_u(p[u]);
-}
 
 void solve (int u, int k) {
 
-    auto pos = lower_bound(L.begin(), L.begin() + k, A[u]) - L.begin();
-
+    int pos = lower_bound(L.begin(), L.begin() + k, A[u]) - L.begin();
     int old_val = L[pos];
-    int old_L_id = L_id[pos];
-    int old_p = p[u];
-
     L[pos] = A[u];
-    L_id[pos] = u;
-    p[u] = pos ? L_id[pos-1] : -1;
-    if (pos == k) k = (int)pos + 1;
 
-    for (int v : AL[u]) {
-        solve(v, k);
-    }
-    ans = 0;
-    print_u(u);
-    likes[u] = ans;
+    if (pos == k) k++;
 
+    for (int v : AL[u]) solve(v, k);
+
+    likes[u] = k;
     L[pos] = old_val;
-    L_id[pos] = old_L_id;
-    p[u] = old_p;
+
 }
 
 int main() {

@@ -54,7 +54,8 @@ add_executable(Programacao_Competitiva
         Maratonas_Anteriores/MP-2023/F.cpp
         Maratonas_Anteriores/MP-2023/L.cpp
         Maratonas_Anteriores/MP-2023/I.cpp
-        Maratonas_Anteriores/MP-2023/M.cpp)
+        Maratonas_Anteriores/MP-2023/M.cpp
+        Maratonas_Anteriores/MP-2025/M.cpp)
 =======
         "Solucoes/Codeforces/Matematica/2246B- ezraft and .cpp"
         "Solucoes/UVA/DP/UVa 10912 - Simple minded Hashing.cpp"
