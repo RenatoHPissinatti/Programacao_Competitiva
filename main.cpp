@@ -1,9 +1,3 @@
-//
-// Created by Usuario on 09/09/2026.
-//
-//
-// Created by Usuario on 09/09/2026.
-//
 #include <bits/stdc++.h>
 using namespace std;
 #define fastio ios::sync_with_stdio(false); cin.tie(nullptr);
@@ -12,16 +6,30 @@ using namespace std;
 const int INF = 1e9;
 const ll LINF = LLONG_MAX/4;
 const int MOD = 1000000007;
-
+int comp (int a, int b) {
+    return a > b;
+}
 int main() {
-    double n; cin >> n;
-    double total = n*100;
-    double orange = 0;
+    int n, t;
+    cin >> n >> t;
+    vector<char> a(n);
     for (int i = 0; i < n; ++i) {
-        double p; cin >> p;
-        orange += p;
+        char c; cin >> c;
+        a[i] = c;
     }
-    cout << fixed << setprecision(12);
-    cout << (orange/total)*100 << '\n';
+
+    for (int i = 0; i < n; ++i) {
+        int count = i;
+        if (a[i] == 'G') {
+            for (int j = 0; j < t; ++j) {
+                if (count < 1 || a[count-1] == 'G') break;
+                swap(a[count], a[count-1]);
+                --count;
+            }
+        }
+    }
+    for (char c : a) cout << c;
+    cout << '\n';
+
     return 0;
 }
