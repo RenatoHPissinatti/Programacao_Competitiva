@@ -14,14 +14,14 @@ const ll LINF = LLONG_MAX/4;
 const int MOD = 1000000007;
 
 int main() {
-    double n; cin >> n;
-    double total = n*100;
-    double orange = 0;
+    int even = 0, odd = 0;
+    int n; cin >> n;
     for (int i = 0; i < n; ++i) {
-        double p; cin >> p;
-        orange += p;
+        int v; cin >> v;
+        if (v % 2 == 0) ++even;
+        else ++odd;
     }
-    cout << fixed << setprecision(12);
-    cout << (orange/total)*100 << '\n';
+    if (odd % 2 == 0) cout << even << '\n';
+    else cout << odd << '\n';
     return 0;
 }
