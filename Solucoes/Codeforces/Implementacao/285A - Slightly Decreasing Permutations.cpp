@@ -1,3 +1,6 @@
+//
+// Created by Usuario on 14/09/2026.
+//
 #include <bits/stdc++.h>
 using namespace std;
 #define fastio ios::sync_with_stdio(false); cin.tie(nullptr);
@@ -11,14 +14,14 @@ int main() {
     fastio;
     int n, k;
     cin >> n >> k;
-    vector<int> a(n);
-    for (int &i : a) cin >> i;
-    sort(a.begin(), a.end());
-    int sum = 0;
-    for (int i = 0; i < k; ++i) {
-        if (a[i] < 0) sum += abs(a[i]);
+    vector<int> ans;
+    for (int i = n; i > n - k; --i) {
+        ans.push_back(i);
     }
-    cout << sum;
+    for (int i = 1; i <= n - k; ++i) {
+        ans.push_back(i);
+    }
+    for (int i : ans) cout << i << ' ';
 
     return 0;
 }
